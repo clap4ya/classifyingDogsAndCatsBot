@@ -16,5 +16,5 @@ def makeReply(data):
     return price
 
 
-bot.add_process(makeReply())
+bot.add_process(makeReply(data))
 bot.run()
