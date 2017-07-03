@@ -7,7 +7,7 @@ def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message, text=reply(message)).send()  
         
-def reply():
+def reply(message):
     if 'bitcoin' in message["text"]:
       url = 'https://api.korbit.co.kr/v1/ticker'es 
       params = {
