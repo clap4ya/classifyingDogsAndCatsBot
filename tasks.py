@@ -8,13 +8,13 @@ def response(message):
     if 'bitcoin' in message["text"]:
       ReplyToActivity(fill=message,
                     text=currentBitcoin()).send()  
-    #else:
-    #  ReplyToActivity(fill=message,
-    #                text=pardon()).send()  
+    else:
+      ReplyToActivity(fill=message,
+                    text=pardon()).send()  
     
 def pardon():    
     ReplyToActivity(fill=message,
-                    text="Sorry, I am bitcoinBot.\n" + currentBitcoin()).send()
+                    text="Sorry, I am bitcoinBot. please ask 'bitcoin' price").send()
     
 def currentBitcoin():
     url = 'https://api.korbit.co.kr/v1/ticker'
