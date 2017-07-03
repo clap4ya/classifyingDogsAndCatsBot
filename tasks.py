@@ -30,8 +30,7 @@ def reply(message):
       #print(res)
       
     elif message["text"] in greetings:
-      res = random.choice(greetings_responses) 
-      + " I am low-level bitcoinBot.\nI can ONLY reply current bitcoin price.\nPlease ask including 'bitcoin'."
+      res = random.choice(greetings_responses) + " I am low-level bitcoinBot.\nI can ONLY reply current bitcoin price.\nPlease ask including 'bitcoin'."
       
     else: 
       res = "Sorry, I am low-level bitcoinBot.\n Please ask including 'bitcoin'."
