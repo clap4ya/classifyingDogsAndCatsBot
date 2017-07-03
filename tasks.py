@@ -8,9 +8,9 @@ def response(message):
     if 'bitcoin' in message["text"]:
       ReplyToActivity(fill=message,
                     text=currentBitcoin()).send()  
-    else:
-      ReplyToActivity(fill=message,
-                    text=pardon()).send()  
+    #else:
+    #  ReplyToActivity(fill=message,
+    #                text=pardon()).send()  
     
 def pardon():    
     ReplyToActivity(fill=message,
