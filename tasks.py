@@ -5,10 +5,18 @@ import datetime
 
 def response(message):
   if message["type"] == "message":
-    ReplyToActivity(fill=message,
-                    text=reply()).send()
+    if 'bitcoin' in message["text"]:
+      ReplyToActivity(fill=message,
+                    text=currentBitcoin()).send()  
+    else:
+      ReplyToActivity(fill=message,
+                    text=pardon()).send()  
     
-def reply():
+def pardon():    
+    ReplyToActivity(fill=message,
+                    text="Sorry, I am bitcoinBot.\n" + currentBitcoin()).send()
+    
+def currentBitcoin():
     url = 'https://api.korbit.co.kr/v1/ticker'
     params = {
         'format': json
