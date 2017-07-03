@@ -7,7 +7,7 @@ def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message,
                     text=reply()).send()
-
+    
 def reply():
     url = 'https://api.korbit.co.kr/v1/ticker'
     params = {
@@ -18,8 +18,8 @@ def reply():
     data = response.json()
 
     price = data['last']
-    current = datetime.datetime.now()
+    current = str(datetime.datetime.now())
     
-    res = current + " price: " + price + "won!"
+    res = current + " price: " + price
     print(res)
     return res
