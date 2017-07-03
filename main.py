@@ -6,6 +6,9 @@ from tasks import *
 import requests
 import json
 
+
+bot = MsBot(port=int(os.environ['PORT']))
+
 url = 'https://api.korbit.co.kr/v1/ticker'
 
 response = requests.get(url, params=params)
