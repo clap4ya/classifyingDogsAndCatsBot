@@ -9,7 +9,7 @@ def response(message):
         
 def reply(message):
     if 'bitcoin' in message["text"]:
-      url = 'https://api.korbit.co.kr/v1/ticker'es 
+      url = 'https://api.korbit.co.kr/v1/ticker'
       params = {
           'format': json
       }
