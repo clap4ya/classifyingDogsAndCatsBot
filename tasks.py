@@ -18,8 +18,10 @@ def reply():
     data = response.json()
 
     price = data['last']
-    current = str(datetime.datetime.now())
+    utcnow = datetime.datetime.utcnow()
+    time_gap = datetime.timedelta(hours=9)
+    current = str(utcnow + time_gap)
     
     res = current + " price: " + price
-    print(res)
+    #print(res)
     return res
