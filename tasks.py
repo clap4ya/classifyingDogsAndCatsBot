@@ -2,12 +2,12 @@ from microsoftbotframework import ReplyToActivity
 import requests
 import json
 
-def echo_response(message):
+def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message,
-                    text=replyBitcoin()).send()
+                    text=reply()).send()
 
-def replyBitcoin():
+def reply():
     url = 'https://api.korbit.co.kr/v1/ticker'
     params = {
         'format': json
