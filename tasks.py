@@ -25,5 +25,5 @@ def reply(message):
       res = current + " price: " + price
       #print(res)
     else: 
-      res = "Sorry, I am bitcoinBot. please ask 'bitcoin' price"
+      res = "Sorry, I am low-level bitcoinBot.\n please ask including 'bitcoin'"
     return res
