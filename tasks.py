@@ -29,10 +29,8 @@ def reply(message):
       res = current + " price: " + price
       #print(res)
       
-    elif:
-      if greetings in message["text"]:
-        res = random.choice(greetings_responses) 
-        + " I am low-level bitcoinBot.\n I can ONLY reply current bitcoin price.\n Please ask including 'bitcoin'."
+    if greetings in message["text"]:
+      res = random.choice(greetings_responses) + " I am low-level bitcoinBot.\n I can ONLY reply current bitcoin price.\n Please ask including 'bitcoin'."
       
     else: 
       res = "Sorry, I am low-level bitcoinBot.\n Please ask including 'bitcoin'."
