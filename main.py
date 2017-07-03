@@ -46,7 +46,14 @@ def processRequest(req):
     price = data['last']
     speech = "price: " + price
     print(speech)
-    return speech
+    return {
+        "speech": speech,
+        "displayText": speech,
+        # "data": data,
+        # "contextOut": [],
+        "source": "lovelybot"
+    }
+
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
