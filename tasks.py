@@ -1,6 +1,7 @@
 from microsoftbotframework import ReplyToActivity
 import requests
 import json
+import datetime
 
 def response(message):
   if message["type"] == "message":
@@ -17,6 +18,8 @@ def reply():
     data = response.json()
 
     price = data['last']
-    res = "price: " + price
+    current = datetime.datetime.now()
+    
+    res = current + " price: " + price + "won!"
     print(res)
     return res
