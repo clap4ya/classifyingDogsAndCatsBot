@@ -2,9 +2,9 @@ import requests
 
 #!/usr/bin/env python
 
-from __future__ import print_function
-from future.standard_library import install_aliases
-install_aliases()
+#from __future__ import print_function
+#from future.standard_library import install_aliases
+#install_aliases()
 
 from urllib.parse import urlparse, urlencode
 from urllib.request import urlopen, Request
@@ -43,7 +43,6 @@ def processRequest(req):
     response = requests.get(url, params=params)
     data = response.json()
 
-    def makeReply(data):
     price = data['last']
     speech = "price: " + price
     print(speech)
