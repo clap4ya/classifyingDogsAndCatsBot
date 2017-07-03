@@ -21,7 +21,7 @@ from flask import make_response
 app = Flask(__name__)
 
 
-@app.route('/bitcoinBot', methods=['POST'])
+@app.route('/', methods=['POST'])
 def bitcoinBot():
     req = request.get_json(silent=True, force=True)
 
@@ -47,14 +47,14 @@ def processRequest(req):
     price = data['last']
     speech = "price: " + price
     print(speech)
-    return {
+    res = {
         "speech": speech,
         "displayText": speech,
         # "data": data,
         # "contextOut": [],
         "source": "lovelybot"
     }
-
+    return res
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
