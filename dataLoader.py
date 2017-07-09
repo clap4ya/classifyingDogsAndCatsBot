@@ -16,5 +16,5 @@ def load_data(message):
 def url_to_img(url):
   resp = urlopen(url)
   img = np.asarray(bytearray(resp.read()), dtype="uint8")
-  img = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
+  img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
   return img
