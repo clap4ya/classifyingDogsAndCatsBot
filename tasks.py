@@ -12,6 +12,5 @@ def response(message):
     ReplyToActivity(fill=message, text=reply(message)).send()  
                             
 def reply(message):
-    if message["attachment"]["contentType"] == "image/jpeg":
-      res = "1234"
+    res = message["text"]
     return res
