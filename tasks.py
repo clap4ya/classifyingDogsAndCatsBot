@@ -13,5 +13,5 @@ def response(message):
     ReplyToActivity(fill=message, text=classify(message)).send()
                             
 def classify(message):
-  data = load_data(message)
+  data = message["attachments"][0]["contentUrl"]
   return data
