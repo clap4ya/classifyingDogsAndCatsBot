@@ -20,9 +20,9 @@ def classify(message):
   url = message["attachments"][0]["contentUrl"]
   IMG_SIZE = 50
   data = url_to_img(url)
-  #img = cv2.resize(data, (IMG_SIZE, IMG_SIZE))
-  #res = img
-  return data
+  img = cv2.resize(data, (IMG_SIZE, IMG_SIZE))
+  res = img
+  return url
 
 def url_to_img(url):
     resp = urlopen(url)
