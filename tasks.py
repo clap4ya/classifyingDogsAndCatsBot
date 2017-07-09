@@ -3,6 +3,7 @@ import requests
 import json
 import datetime
 import random
+import cv2
 
 greetings = [ "hi", "hello", "hey", "yo", "greetings" ]
 greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
