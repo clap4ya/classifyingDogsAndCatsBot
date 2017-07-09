@@ -11,7 +11,7 @@ def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message, text=reply(message)).send()  
   else:
-    ReplyToActivity(fill=message, text=type(message).send()  
+    ReplyToActivity(fill=message, text=print(type(message)).send()  
         
 def reply(message):
     if 'bitcoin' in message["text"]:
