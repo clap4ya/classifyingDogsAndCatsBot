@@ -10,13 +10,11 @@ greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
 def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message, text=reply(message)).send()  
-  elif message["type"] == "image":
-    ReplyToActivity(fill=message, text=ppp(message)).send()
-                    
-def ppp(message):
-    return "I can receive image type."
-        
+                            
 def reply(message):
+    if message["contentType"] == "image/jpeg":
+      res = "Success to receive image!!!"
+  
     if 'bitcoin' in message["text"]:
       url = 'https://api.korbit.co.kr/v1/ticker'
       params = {
