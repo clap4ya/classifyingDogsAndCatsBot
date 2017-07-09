@@ -1,7 +1,7 @@
 from microsoftbotframework import ReplyToActivity
 import cv2
 import numpy as np
-from urllib.request import urlopen
+#from urllib.request import urlopen
 
 def response(message):
   if message["attachments"][0]["contentType"] == "image/jpeg":
@@ -11,7 +11,7 @@ def classify(message):
   url = message["attachments"][0]["contentUrl"]
   return url
 
-def resizie(url):
+def resize(url):
   resp = urlopen(url)
   img = np.asarray(bytearray(resp.read()), dtype="uint8")
   img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
