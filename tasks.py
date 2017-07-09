@@ -10,11 +10,11 @@ greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
 def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message, text=reply(message)).send()  
-  else:
+  elif message["type"] == "image":
     ReplyToActivity(fill=message, text=ppp(message)).send()
                     
 def ppp(message):
-    return "afafa"
+    return "I can receive image type."
         
 def reply(message):
     if 'bitcoin' in message["text"]:
