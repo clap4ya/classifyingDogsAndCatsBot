@@ -3,7 +3,7 @@ import requests
 import json
 import datetime
 import random
-#from dataLoader import *
+from dataLoader import *
 
 greetings = [ "hi", "hello", "hey", "yo", "greetings" ]
 greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
@@ -13,5 +13,5 @@ def response(message):
     ReplyToActivity(fill=message, text=classify(message)).send()
                             
 def classify(message):
-  #data = load_data(message)
+  data = load_data
   return "11111111111111"
