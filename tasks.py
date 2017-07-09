@@ -12,13 +12,13 @@ def response(message):
     ReplyToActivity(fill=message, text=reply(message)).send()  
                             
 def reply(message):
-    if message["contentType"] == "image/jpeg":
-      res = "Success to receive image!!!"
+    #if message["contentType"] == "image/jpeg":
+    res = message["contentType"]
     
     elif message["text"] in greetings:
       res = random.choice(greetings_responses) + " I am low-level classifyingBot.\nI can ONLY classify dogs and cats.\nPlease sned a image"
       
-    else: 
-      res = "Sorry, I am low-level classifyingBot.\n Please send a image."
+    #else: 
+    #  res = "Sorry, I am low-level classifyingBot.\n Please send a image."
       
     return res
