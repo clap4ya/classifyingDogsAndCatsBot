@@ -12,13 +12,5 @@ def response(message):
     ReplyToActivity(fill=message, text=reply(message)).send()  
                             
 def reply(message):
-  params = {
-    'format': json
-  }
-
-  response = requests.get(message, params=params)
-  data = response.json()
-
-  channelId = data['channelId']
-  res = channelId
+  res = message["attachments"][0]["contentType]
   return res
