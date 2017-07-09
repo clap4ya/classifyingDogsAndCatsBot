@@ -13,9 +13,9 @@ def response(message):
                             
 def reply(message):
     #if message["contentType"] == "image/jpeg":
-    res = message
+    res = message["text"]
     
-    elif message["text"] in greetings:
+    if message["text"] in greetings:
       res = random.choice(greetings_responses) + " I am low-level classifyingBot.\nI can ONLY classify dogs and cats.\nPlease sned a image"
       
     #else: 
