@@ -3,9 +3,9 @@ import requests
 import json
 import datetime
 import random
-#import numpy as np
-#from urllib.request import urlopen
-#import cv2
+import numpy as np
+from urllib.request import urlopen
+import cv2
 
 greetings = [ "hi", "hello", "hey", "yo", "greetings" ]
 greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
@@ -24,9 +24,9 @@ def classify(message):
   #res = img
   return url
 
-#def url_to_img(url):
-#    resp = urlopen(url)
-#    image = np.asarray(bytearray(resp.read()), dtype="uint8")
-#    image = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
-# 
-#    return image
+def url_to_img(url):
+    resp = urlopen(url)
+    img = np.asarray(bytearray(resp.read()), dtype="uint8")
+    img = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
+ 
+    return img
