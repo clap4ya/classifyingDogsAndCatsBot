@@ -19,6 +19,6 @@ def reply(message):
   response = requests.get(message, params=params)
   data = response.json()
 
-  price = data['text']
-  res = message
+  channelId = data['channelId']
+  res = channelId
   return res
