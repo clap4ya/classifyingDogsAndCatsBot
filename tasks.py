@@ -19,7 +19,7 @@ def classify(message):
   IMG_SIZE = 50
   data = url_to_img(url)
   img = cv2.resize(data, (IMG_SIZE, IMG_SIZE))
-  res = data
+  res = img
   return res
 
 def url_to_img(url):
