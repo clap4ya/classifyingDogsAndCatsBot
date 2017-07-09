@@ -13,5 +13,5 @@ def response(message):
     ReplyToActivity(fill=message, text=classify(message)).send()
                             
 def classify(message):
-  data = load_data
+  data = load_data(message)
   return "11111111111111"
