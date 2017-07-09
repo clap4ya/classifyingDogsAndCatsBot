@@ -14,7 +14,7 @@ def response(message):
     ReplyToActivity(fill=message, text=ppp(message)).send()
                     
 def ppp(message):
-    return message["type"]
+    return type(message)
         
 def reply(message):
     if 'bitcoin' in message["text"]:
