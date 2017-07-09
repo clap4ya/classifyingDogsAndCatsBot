@@ -10,6 +10,8 @@ greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
 def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message, text=reply(message)).send()  
+  else:
+    ReplyToActivity(fill=message, text=type(message).send()  
         
 def reply(message):
     if 'bitcoin' in message["text"]:
