@@ -3,6 +3,8 @@ import requests
 import json
 import datetime
 import random
+import numpy as np
+from urllib.request import urlopen
 import cv2
 
 greetings = [ "hi", "hello", "hey", "yo", "greetings" ]
