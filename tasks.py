@@ -14,7 +14,16 @@ def response(message):
     ReplyToActivity(fill=message, text="I am low-level classifyingBot. Please send a image.").send()
                             
 def classify(message):
-  data = message["attachments"][0]["contentUrl"]
+  url = message["attachments"][0]["contentUrl"]
+  IMG_SIZE = 50
+  data = url_to_img(url)
+  img = cv2.resize(data, (IMG_SIZE, IMG_SIZE))
   res = data
-  
   return res
+
+def url_to_img(url):
+    resp = urlopen(url)
+    image = np.asarray(bytearray(resp.read()), dtype="uint8")
+    image = cv2.imdecode(image, cv2.IMREAD_GRAYSCALE)
+ 
+    return image
