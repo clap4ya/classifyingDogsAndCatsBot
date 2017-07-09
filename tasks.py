@@ -16,5 +16,6 @@ def reply(message):
     
   if message["attachments"][0]["contentType"] == "image/jpeg":
     data = message["attachments"][0]["contentUrl"]
-  
+    res = "ikik"
+    
   return res
