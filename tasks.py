@@ -12,5 +12,13 @@ def response(message):
     ReplyToActivity(fill=message, text=reply(message)).send()  
                             
 def reply(message):
-    res = message
-    return res
+  params = {
+    'format': json
+  }
+
+  response = requests.get(message, params=params)
+  data = response.json()
+
+  price = data['text']
+  res = message
+  return res
