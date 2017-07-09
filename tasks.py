@@ -12,5 +12,5 @@ def response(message):
     ReplyToActivity(fill=message, text=reply(message)).send()  
                             
 def reply(message):
-    res = message["tchannelId"]
+    res = message
     return res
