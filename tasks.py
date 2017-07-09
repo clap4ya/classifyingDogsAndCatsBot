@@ -12,8 +12,9 @@ def response(message):
     ReplyToActivity(fill=message, text=reply(message)).send()  
                             
 def reply(message):
+  res = "I am low-level classifyingBot. Please send a image."
+    
   if message["attachments"][0]["contentType"] == "image/jpeg":
-    res = message["attachments"][0]["contentUrl"]
-  else:
-    res = "I am low-level classifyingBot. Please send a image."
+    data = message["attachments"][0]["contentUrl"]
+  
   return res
