@@ -15,6 +15,6 @@ def response(message):
                             
 def classify(message):
   data = message["attachments"][0]["contentUrl"]
-  res = "ikik"
-    
+  res = data
+  
   return res
