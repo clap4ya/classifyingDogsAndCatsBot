@@ -15,5 +15,5 @@ def response(message):
     ReplyToActivity(fill=message, text="I am low-level classifyingBot. Please send a image.").send()
                             
 def classify(message):
-  data = load_data(message)
+  #data = load_data(message)
   return "gogogo"
