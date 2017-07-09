@@ -16,4 +16,4 @@ def response(message):
                             
 def classify(message):
   data = load_data(message)
-  return data.shape
+  return "gogogo"
