@@ -3,7 +3,7 @@ import requests
 import json
 import datetime
 import random
-from dataLoader import *
+#from dataLoader import *
 
 greetings = [ "hi", "hello", "hey", "yo", "greetings" ]
 greetings_responses = [ "Hi there." , "Greetings man.", "Hello there.", "Hey." ]
