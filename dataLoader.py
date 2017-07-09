@@ -6,8 +6,8 @@ IMG_SIZE = 50
 
 def load_data(message):
   url = message["attachments"][0]["contentUrl"]
-  data = url_to_img(url)
-  img = cv2.resize(data, (IMG_SIZE, IMG_SIZE))
+  img = url_to_img(url)
+  img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
   return img
 
 def url_to_img(url):
