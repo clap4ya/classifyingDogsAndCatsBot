@@ -11,7 +11,10 @@ def response(message):
   if message["type"] == "message":
     ReplyToActivity(fill=message, text=reply(message)).send()  
   else:
-    ReplyToActivity(fill=message, text=print(type(message)).send()  
+    ReplyToActivity(fill=message, text=ppp(message)).send()
+                    
+def ppp(message):
+    return message["type"]
         
 def reply(message):
     if 'bitcoin' in message["text"]:
