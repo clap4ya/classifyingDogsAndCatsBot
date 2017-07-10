@@ -1,7 +1,7 @@
 from microsoftbotframework import ReplyToActivity
 from urllib.request import urlopen
-#import cv2
 try:
+  import cv2
   import numpy as np
 except ImportError:
     np = None 
