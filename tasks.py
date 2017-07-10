@@ -4,6 +4,7 @@ try:
   import cv2
   import numpy as np
 except ImportError:
+    cv2 = None
     np = None 
 
 
