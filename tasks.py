@@ -1,6 +1,6 @@
 from microsoftbotframework import ReplyToActivity
 from urllib.request import urlopen
-import cv2
+#import cv2
 #from numpy import asarray
 
 
@@ -10,12 +10,12 @@ def response(message):
                             
 def classify(message):
   url = message["attachments"][0]["contentUrl"]
-  #res = url2img(url)
+  res = url2img(url)
   return url
 
-#def url2img(url):
-  #resp = urlopen(url)
+def url2img(url):
+  resp = urlopen(url)
   #img = np.asarray(bytearray(resp.read()), dtype="uint8")
   #img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
   #img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
-  #return img
+  return resp
