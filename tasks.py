@@ -1,7 +1,7 @@
 from microsoftbotframework import ReplyToActivity
 from urllib.request import urlopen
 #import cv2
-#from numpy import asarray
+from numpy import asarray
 
 
 def response(message):
