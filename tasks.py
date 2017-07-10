@@ -1,7 +1,10 @@
 from microsoftbotframework import ReplyToActivity
 from urllib.request import urlopen
 #import cv2
-import numpy as np
+try:
+  import numpy as np
+except ImportError:
+    np = None 
 
 
 def response(message):
