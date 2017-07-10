@@ -11,8 +11,7 @@ def response(message):
 def classify(message):
   url = message["attachments"][0]["contentUrl"]
   res = url2img(url)
-  res = sys.version
-  return res
+  return "111111111111111111111"
 
 def url2img(url):
   resp = urlopen(url)
