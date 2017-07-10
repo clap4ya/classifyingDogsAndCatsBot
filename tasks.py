@@ -1,7 +1,8 @@
 from microsoftbotframework import ReplyToActivity
-#from cv2 import imdecode
-#from numpy import asarray
 from urllib.request import urlopen
+import cv2
+#from numpy import asarray
+
 
 def response(message):
   if message["attachments"][0]["contentType"] == "image/jpeg":
