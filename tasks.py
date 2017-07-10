@@ -1,11 +1,12 @@
 from microsoftbotframework import ReplyToActivity
 from urllib.request import urlopen
-try:
-  import cv2
-  import numpy as np
-except ImportError:
-    cv2 = None
-    np = None 
+import sys
+#try:
+#  import cv2
+#  import numpy as np
+#except ImportError:
+#    cv2 = None
+#    np = None 
 
 
 def response(message):
@@ -15,11 +16,12 @@ def response(message):
 def classify(message):
   url = message["attachments"][0]["contentUrl"]
   res = url2img(url)
+  res = sys.version
   return url
 
 def url2img(url):
   resp = urlopen(url)
-  img = np.asarray(bytearray(resp.read()), dtype="uint8")
-  img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
-  img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
+  #img = np.asarray(bytearray(resp.read()), dtype="uint8")
+  #img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
+  #img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
   return resp
