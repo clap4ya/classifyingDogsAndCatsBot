@@ -1,5 +1,5 @@
 from microsoftbotframework import ReplyToActivity
-import cv2
+from cv2 import *
 #import numpy as np
 #from urllib.request import urlopen
 
