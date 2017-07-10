@@ -1,1 +1,3 @@
 microsoftbotframework
+cv2
+numpy
