@@ -11,8 +11,10 @@ def response(message):
                             
 def classify(message):
   url = message["attachments"][0]["contentUrl"]
-  res = url2img(url)
-  return res.shape
+  data = url2img(url)
+  img_data = data[0]
+  data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
+  return data.shape
 
 def url2img(url):
   resp = urlopen(url)
