@@ -1,6 +1,6 @@
 from microsoftbotframework import ReplyToActivity
-from cv2 import imdecode
-from numpy import asarray
+#from cv2 import imdecode
+#from numpy import asarray
 from urllib.request import urlopen
 
 def response(message):
