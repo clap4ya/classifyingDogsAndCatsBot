@@ -19,4 +19,5 @@ def url2img(url):
   img = np.asarray(bytearray(resp.read()), dtype="uint8")
   img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
   img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
+  img = np.array(img)
   return img
