@@ -14,15 +14,19 @@ def classify(message):
   url = message["attachments"][0]["contentUrl"]
   data = url2img(url)
   data = data.reshape(IMG_SIZE,IMG_SIZE,1)
-  return url
+  model = load_model()  
+  model_out = model.predict([data])
+  if np.argmax(model_out) == 1: str_label='Dog'
+  else: str_label='Cat'
+  return str_label
 
 def url2img(url):
-    resp = urlopen(url)
-    img = np.asarray(bytearray(resp.read()), dtype="uint8")
-    img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
-    img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
-    img = np.array(img)
-    return img
+  resp = urlopen(url)
+  img = np.asarray(bytearray(resp.read()), dtype="uint8")
+  img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
+  img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
+  img = np.array(img)
+  return img
 
 def load_model():
     tf.reset_default_graph()
@@ -55,7 +59,6 @@ def load_model():
     MODEL_NAME = "dogsvscats-{}-{}.model".format(LR, "2conv-basic")
   
     if os.path.exists(MODEL_NAME):
-        model.load(MODEL_NAME)
-        print('model loaded!')
+      model.load(MODEL_NAME)
     
     return model  
