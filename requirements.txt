@@ -1,3 +1,5 @@
 microsoftbotframework
 numpy
 opencv-python
+tensorflow
+tflearn
