@@ -17,7 +17,7 @@ def classify(message):
   url = message["attachments"][0]["contentUrl"]
   data = url2img(url)
   img_data = data[0]
-  data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
+  #data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
   #load_model()
   #model_out = model.predict([data])[0]
   #if np.argmax(model_out) == 1: str_label='Dog'
