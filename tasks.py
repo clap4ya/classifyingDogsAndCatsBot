@@ -4,6 +4,7 @@ import numpy as np
 import cv2 
 
 IMG_SIZE = 50
+LR = 1e-3
 
 def response(message):
   if message["attachments"][0]["contentType"] == "image/jpeg":
