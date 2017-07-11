@@ -22,10 +22,10 @@ def classify(message):
   data = url2img(url)
   data = data.reshape(IMG_SIZE,IMG_SIZE,1)
   model = load_model()  
-  #model_out = model.predict([data])
-  #if np.argmax(model_out) == 1: str_label='Dog'
-  #else: str_label='Cat'
-  return url
+  model_out = model.predict([data])
+  if np.argmax(model_out) == 1: str_label='Dog'
+  else: str_label='Cat'
+  return str_label
 
 def url2img(url):
   resp = urlopen(url)
