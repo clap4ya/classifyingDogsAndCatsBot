@@ -13,7 +13,7 @@ def classify(message):
   url = message["attachments"][0]["contentUrl"]
   data = url2img(url)
   img_data = data[0]
-  data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
+  #data = img_data.reshape(IMG_SIZE,IMG_SIZE,1)
   return url
 
 def url2img(url):
