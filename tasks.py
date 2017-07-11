@@ -6,12 +6,12 @@ from microsoftbotframework import ReplyToActivity
 IMG_SIZE = 50
 
 def response(message):
-    if message["attachments"][0]["contentType"] == "image/jpeg":
+  if message["attachments"][0]["contentType"] == "image/jpeg":
     ReplyToActivity(fill=message, text=classify(message)).send()
                             
 def classify(message):
-    url = message["attachments"][0]["contentUrl"]
-    return url
+  url = message["attachments"][0]["contentUrl"]
+  return url
 
 #def url2img(url):
 #    resp = urlopen(url)
