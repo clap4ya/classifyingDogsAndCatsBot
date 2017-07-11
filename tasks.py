@@ -13,10 +13,10 @@ def classify(message):
     url = message["attachments"][0]["contentUrl"]
     return url
 
-def url2img(url):
-    resp = urlopen(url)
-    img = np.asarray(bytearray(resp.read()), dtype="uint8")
-    img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
-    img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
-    img = np.array(img)
-    return img
+#def url2img(url):
+#    resp = urlopen(url)
+#    img = np.asarray(bytearray(resp.read()), dtype="uint8")
+#    img = cv2.imdecode(img, cv2.IMREAD_GRAYSCALE)
+#    img = cv2.resize(img, (IMG_SIZE,IMG_SIZE))
+#    img = np.array(img)
+#    return img
