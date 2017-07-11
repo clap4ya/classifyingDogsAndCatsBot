@@ -9,8 +9,9 @@ from tflearn.layers.conv import conv_2d, max_pool_2d
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 
-
+#image size
 IMG_SIZE = 50
+#learning rate(0.001)
 LR = 1e-3
 
 def response(message):
@@ -19,14 +20,20 @@ def response(message):
                             
 def classify(message):
   url = message["attachments"][0]["contentUrl"]
+  #url to image
   data = url2img(url)
+  #reshape
   data = data.reshape(IMG_SIZE,IMG_SIZE,1)
-  model = load_model()  
+  #load model
+  model = load_model()
+  #predict
   model_out = model.predict([data])
+  #classify dog and cat by prediction
   if np.argmax(model_out) == 1: str_label='Dog'
   else: str_label='Cat'
   return str_label
 
+#url to image
 def url2img(url):
   resp = urlopen(url)
   img = np.asarray(bytearray(resp.read()), dtype="uint8")
@@ -35,6 +42,7 @@ def url2img(url):
   img = np.array(img)
   return img
 
+#load trained cnn model
 def load_model():
   tf.reset_default_graph()
 
